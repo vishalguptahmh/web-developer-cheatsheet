@@ -26,3 +26,34 @@ npm i node-fetch --save
 to use it module use `const fetch = require("node-fetch");` 
 
 to use it globally anywhere use `global.fetch = require("node-fetch");`
+
+
+## Load testing with Siege
+github source code : https://github.com/JoeDog/siege
+
+##### Installation : 
+| OS | command | 
+| :-----: | :-: |
+| mac | `brew install siege` | 
+| Debin/Ubuntu | `sudo apt install siege` | 
+
+
+##### Check version : 
+
+`siege -V`
+
+##### Run : 
+```
+siege -t2M  -d3 -c150 http://localhost:8080/api/getData 
+
+```
+| command param | Meaning | 
+| :-----: | :-: |
+| -t2M | run for 2 minute | 
+| -t2H | run for 2 Hour | 
+| -t20S | run for 20 seconds | 
+| -d3 | delay for 3 seconds | 
+| -c150 | 150 hits  | 
+
+
+command meaning : Above command will hit 150 hits to server within 3 seconds.
